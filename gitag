@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# create git tag first
+TAG=$1
+#echo Tag $TAG
+git tag $TAG
+git push --tags
+
+ENDPOINT=https://github.ibm.com/api/v3
+ORG=clear-lake-ebusiness
+
+#TODO keep full org as well
+REPO=`basename -s .git $(git config --get remote.origin.url)`
+#echo Repo $REPO
+
+DATA="{\"title\":\"$TAG\"}"
+echo Data $DATA
+# now milestone
+curl -u "$GIT_USER:$GIT_TOKEN" $ENDPOINT/repos/$ORG/$REPO/milestones -d $DATA
