@@ -6,14 +6,13 @@ TAG=$1
 git tag $TAG
 git push --tags
 
+# now milestone
 ENDPOINT=https://github.ibm.com/api/v3
-ORG=clear-lake-ebusiness
 
-#TODO keep full org as well
-REPO=`basename -s .git $(git config --get remote.origin.url)`
+# Yes, this is insanity complexity
+REPO=`echo $(git remote get-url origin) | sed -r 's/.+\:(.+)\.git/\1/g'`
 #echo Repo $REPO
 
 DATA="{\"title\":\"$TAG\"}"
-echo Data $DATA
-# now milestone
-curl -u "$GIT_USER:$GIT_TOKEN" $ENDPOINT/repos/$ORG/$REPO/milestones -d $DATA
+#echo Data $DATA
+curl -s -u "$GIT_USER:$GIT_TOKEN" $ENDPOINT/repos/$REPO/milestones -d $DATA
