@@ -18,3 +18,5 @@ See https://developer.github.com/v3/repos/releases/
 [gitag](https://github.ibm.com/breaux/github-util/blob/master/gitag)
 
 Our current team pattern is to create milestones with most tags, so we can assign Issues to a Milestone and know which builds contain which Issues
+
+See https://developer.github.com/v3/issues/milestones/
