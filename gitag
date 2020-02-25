@@ -15,4 +15,4 @@ REPO=`echo $(git remote get-url origin) | sed -r 's/.+\:(.+)\.git/\1/g'`
 
 DATA="{\"title\":\"$TAG\"}"
 #echo Data $DATA
-curl -s -u "$GIT_USER:$GIT_TOKEN" $ENDPOINT/repos/$REPO/milestones -d $DATA
+curl -sS -u "$GIT_USER:$GIT_TOKEN" $ENDPOINT/repos/$REPO/milestones -d $DATA
