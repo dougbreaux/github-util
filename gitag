@@ -1,5 +1,19 @@
 #!/bin/bash
 
+# make sure expected environment variables available
+if [[ -z "$GIT_USER" ]] || [[ -z "$GIT_TOKEN" ]]
+then
+	echo "Missing GIT_USER or GIT_TOKEN environment variables"
+	exit 1
+fi
+
+# make sure expected command-line parameters
+if [[ -z "$1" ]] 
+then
+	echo "Usage: gitag <tag-name>"
+	exit 1
+fi
+
 # create git tag first
 TAG=$1
 #echo Tag $TAG
