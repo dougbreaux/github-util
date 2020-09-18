@@ -13,9 +13,13 @@ This script can be called to retrieve a jar from a repo's Releases, and add it t
 
 See https://developer.github.com/v3/repos/releases/
 
-## Create Tag and Milestone together
+## Create and push Tag
 
 [gitag](https://github.ibm.com/breaux/github-util/blob/master/gitag)
+
+## Create Tag and Milestone together
+
+[gtm](https://github.ibm.com/breaux/github-util/blob/master/gtm)
 
 Our current team pattern is to create milestones with most tags, so we can assign Issues to a Milestone and know which builds contain which Issues
 
