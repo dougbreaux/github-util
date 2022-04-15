@@ -1,16 +1,16 @@
 #!/bin/bash
 
 # make sure expected environment variables available
-if [[ -z "$GIT_USER" ]] || [[ -z "$GIT_TOKEN" ]]
+if [[ -z "$GITHUB_USER" ]] || [[ -z "$GITHUB_TOKEN" ]]
 then
-	echo "Missing GIT_USER or GIT_TOKEN environment variables"
+	echo "Missing GITHUB_USER or GITHUB_TOKEN environment variables"
 	exit 1
 fi
 
 # make sure expected command-line parameters
 if [[ -z "$1" ]] 
 then
-	echo "Usage: gitag <tag-name>"
+	echo "Usage: gtm <tag-name>"
 	exit 1
 fi
 
@@ -21,7 +21,8 @@ git tag $TAG
 git push origin $TAG
 
 # now milestone
-ENDPOINT=https://github.ibm.com/api/v3
+#ENDPOINT=https://github.ibm.com/api/v3
+ENDPOINT=https://github.kyndryl.net/api/v3
 
 # Yes, this is insanity complexity
 REPO=`echo $(git remote get-url origin) | sed -r 's/.+\:(.+)\.git/\1/g'`
@@ -29,4 +30,4 @@ REPO=`echo $(git remote get-url origin) | sed -r 's/.+\:(.+)\.git/\1/g'`
 
 DATA="{\"title\":\"$TAG\"}"
 #echo Data $DATA
-curl -sS -u "$GIT_USER:$GIT_TOKEN" $ENDPOINT/repos/$REPO/milestones -d $DATA
+curl -sS -u "$GITHUB_USER:$GITHUB_TOKEN" $ENDPOINT/repos/$REPO/milestones -d $DATA
