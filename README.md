@@ -11,7 +11,7 @@ See
 
 This script can be called to retrieve a jar from a repo's Releases, and add it to the local Maven repo cache. Suitable either for calling from within GitHub environment, like with Travis CI, or for artifacts that aren't in any remote Maven repos.
 
-See https://developer.github.com/v3/repos/releases/
+See https://docs.github.com/en/rest/releases/releases
 
 ## Create and push Tag
 
@@ -23,4 +23,4 @@ See https://developer.github.com/v3/repos/releases/
 
 Our current team pattern is to create milestones with most tags, so we can assign Issues to a Milestone and know which builds contain which Issues
 
-See https://developer.github.com/v3/issues/milestones/
+See https://docs.github.com/en/rest/issues/milestones
