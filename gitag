@@ -3,8 +3,9 @@
 # make sure expected command-line parameters
 if [[ -z "$1" ]] 
 then
-	echo "Usage: gitag <tag-name>"
-	exit 1
+	git tag --sort=creatordate
+	#echo "Usage: gitag <tag-name>"
+	exit 0
 fi
 
 TAG=$1
