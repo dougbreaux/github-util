@@ -2,8 +2,8 @@
 Utility files for working with GitHub, including IBM GitHub Enterprise (GHE).
 
 See 
-* [GitHub API](https://developer.github.com/v3/)
-* [jq tool](https://stedolan.github.io/jq/manual/) for parsing JSON from shell
+* [GitHub REST API](https://docs.github.com/en/rest)
+* [jq tool](https://jqlang.github.io/jq/manual/) for parsing JSON from shell
 * [jq Playground](https://jqplay.org/) for testing jq parsing
 
 ## Get Release Jar for Maven
