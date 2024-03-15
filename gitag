@@ -3,7 +3,7 @@
 # make sure expected command-line parameters
 if [[ -z "$1" ]] 
 then
-	git tag --sort=creatordate
+	git -P tag --sort=creatordate
 	#echo "Usage: gitag <tag-name>"
 	exit 0
 fi
