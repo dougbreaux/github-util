@@ -1,10 +1,25 @@
 # github-util
 Utility files for working with GitHub, including corporate GitHub Enterprise.
 
-See 
+See
 * [GitHub REST API](https://docs.github.com/en/rest)
 * [jq tool](https://jqlang.github.io/jq/manual/) for parsing JSON from shell
 * [jq Playground](https://jqplay.org/) for testing jq parsing
+
+## Get specific version of Maven
+
+[mvn-install.sh](mvn-install.sh)
+
+For use in CICD like GitHub Actions. e.g.
+```yaml
+    steps:
+
+      - name: Install Maven
+        run: |
+          chmod +x ${GITHUB_WORKSPACE}/mvn-install.sh;
+          ${GITHUB_WORKSPACE}/mvn-install.sh ${MAVEN_VERSION};
+          echo "/opt/apache-maven-${MAVEN_VERSION}/bin" >> $GITHUB_PATH;
+```
 
 ## Get Release Jar for Maven
 [get-release-as-maven-dependency.sh](get-release-as-maven-dependency.sh)
