@@ -1,0 +1,11 @@
+@-moz-document regexp("^https://github\\.com/.+\\.md$") {
+/* clean view of Markdown files for printing, like to PDF */
+@media print {    
+  header { display: none; }
+  #StickyHeader { display: none; }
+  #repos-sticky-header { display: none;}
+  .react-code-size-details-banner { display: none !important; }
+  div[class^="LatestCommit-module"] { display: none; }
+}
+
+}
