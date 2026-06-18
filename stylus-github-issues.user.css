@@ -1,0 +1,9 @@
+@-moz-document regexp("^https://github\\.com/.+\\issues\\/.+$") {
+/* clean view of Issues printing, like to PDF */
+@media print {    
+    header { display: none; }
+    div[data-testid="issue-viewer-metadata-container"] { display: none; }
+    div[data-component="PH_Actions"] { display: none; }
+    #react-issue-comment-composer { display: none; }
+}
+}
